@@ -48,12 +48,13 @@ public class Cat : MonoBehaviour
                 energy += 1.0f;
                 front.localScale = new Vector3(energy / full, 1.0f, 1.0f);
                 Destroy(collision.gameObject);
+                if(energy == 5.0f)
+                {
+                    hungryCat.SetActive(false);
+                    fullCat.SetActive(true);
+                }
             }
-            else
-            {
-                hungryCat.SetActive(false);
-                fullCat.SetActive(true);
-            }
+           
         }
         
     }
