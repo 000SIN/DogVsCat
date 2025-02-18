@@ -14,6 +14,9 @@ public class Cat : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 60; //모든 컴퓨터의 프레임 수를 똑같이 맞춰주기
+        float x = Random.Range(-9.0f, 9.0f);
+        float y = 30.0f;
+        transform.position = new Vector2(x, y);
     }
 
     // Update is called once per frame
