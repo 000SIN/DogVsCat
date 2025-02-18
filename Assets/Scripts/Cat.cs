@@ -19,7 +19,21 @@ public class Cat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += Vector3.down * 0.05f;
+        if (energy < full)
+        {
+            transform.position += Vector3.down * 0.05f;
+        }
+        else
+        {
+            if(transform.position.x > 0)
+            {
+                transform.position += Vector3.right * 0.05f;
+            }
+            else
+            {
+                transform.position += Vector3.left * 0.05f;
+            }
+        }
     }
     
     private void OnTriggerEnter2D(Collider2D collision)
