@@ -56,6 +56,7 @@ public class Cat : MonoBehaviour
                 {
                     hungryCat.SetActive(false);
                     fullCat.SetActive(true);
+                    Destroy(gameObject, 3.0f);
                 }
             }
            

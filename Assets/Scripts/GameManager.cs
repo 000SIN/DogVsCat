@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
         Application.targetFrameRate = 60; //모든 컴퓨터의 프레임 수를 똑같이 맞춰주기
+        Time.timeScale = 1.0f;
     }
     
     void Start()
@@ -39,5 +40,6 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         retryBtn.SetActive(true);
+        Time.timeScale = 0f;
     }
 }
