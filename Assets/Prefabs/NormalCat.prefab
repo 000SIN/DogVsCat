@@ -206,6 +206,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f556c970d3a58b4438a2a3de1893aa71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hungryCat: {fileID: 7774655270006838397}
+  fullCat: {fileID: 2362003911749584172}
+  front: {fileID: 8286292249954815426}
 --- !u!61 &2038682383765453281
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -353,7 +356,7 @@ Transform:
   m_GameObject: {fileID: 7774655270006838397}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 5.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
