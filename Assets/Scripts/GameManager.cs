@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
             if (p < 5) Instantiate(normalCat);
         }
         //lv 3 뚱뚱한 고양이를 생성해준다
-        else
+        else if(level == 3)
         {
             Instantiate(fatCat);
         }

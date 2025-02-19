@@ -9,8 +9,11 @@ public class Cat : MonoBehaviour
 
     public RectTransform front;
 
+    public int type;
+
     float full = 5.0f;
     float energy = 0.0f;
+    float speed = 0.05f;
 
     bool isFull = false;
     void Start()
@@ -19,6 +22,17 @@ public class Cat : MonoBehaviour
         float x = Random.Range(-9.0f, 9.0f);
         float y = 30.0f;
         transform.position = new Vector2(x, y);
+
+        if(type == 1)
+        {
+            speed = 0.05f;
+            full = 5f;
+        }
+        else if(type == 2)
+        {
+            speed = 0.02f;
+            full = 10f;
+        }
     }
 
     // Update is called once per frame
@@ -26,7 +40,7 @@ public class Cat : MonoBehaviour
     {
         if (energy < full)
         {
-            transform.position += Vector3.down * 0.05f;
+            transform.position += Vector3.down * speed;
             if(transform.position.y < -16.0f)
             {
                 GameManager.Instance.GameOver();
