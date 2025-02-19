@@ -33,6 +33,11 @@ public class Cat : MonoBehaviour
             speed = 0.02f;
             full = 10f;
         }
+        else if (type == 3)
+        {
+            speed = 0.06f;
+            full = 10f;
+        }
     }
 
     // Update is called once per frame

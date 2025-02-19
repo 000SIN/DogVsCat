@@ -9,7 +9,7 @@ public class Dog : MonoBehaviour
     
     void Start()
     {
-        InvokeRepeating("MakeFood", 0f, 0.5f); // 0f부터 시작해서 0.5f마다 재생성
+        InvokeRepeating("MakeFood", 0f, 0.2f); // 0f부터 시작해서 0.5f마다 재생성
     }
 
     private void Update()

@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject normalCat;
     public GameObject fatCat;
+    public GameObject pirateCat;
     public GameObject retryBtn;
     // Start is called before the first frame update
 
@@ -27,6 +28,8 @@ public class GameManager : MonoBehaviour
         }
         Application.targetFrameRate = 60; //모든 컴퓨터의 프레임 수를 똑같이 맞춰주기
         Time.timeScale = 1.0f;
+
+        level = 0; //level 초기화 추가
     }
     
     void Start()
@@ -42,6 +45,7 @@ public class GameManager : MonoBehaviour
 
     void MakeCat()
     {
+        Debug.Log("현재 Level: " + level);
         Instantiate(normalCat);//normalCat 프리팹의 **복제본(인스턴스)를 씬에 생성.
                                //예를 들어 p가 0, 1, 2일 때는 아무것도 생성되지 않음(30 % 확률로 고양이 안 나옴).
                                //즉, 랜덤 값에 따라 고양이가 아예 안 나올 수도 있는 상황이 됨.
@@ -63,6 +67,10 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(fatCat);
         }
+        else if(level == 4)
+        {
+            Instantiate(pirateCat);
+        }
     }
 
     public void GameOver()
@@ -73,6 +81,11 @@ public class GameManager : MonoBehaviour
 
     public void AddScore()
     {
+        score++;
+        Debug.Log("현재 Score: " + score); // 
+        level = score / 5;
+        Debug.Log("현재 Level: " + level); // 
+
         score++; //= (score += 1)
         level = score / 5;
         levelTxt.text = level.ToString();
