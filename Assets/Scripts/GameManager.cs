@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,12 @@ public class GameManager : MonoBehaviour
     public GameObject normalCat;
     public GameObject retryBtn;
     // Start is called before the first frame update
+
+    public RectTransform levelFront;
+    public Text levelTxt;
+
+    int level = 0;
+    int score = 0;
 
     private void Awake()
     {
@@ -41,5 +48,13 @@ public class GameManager : MonoBehaviour
     {
         retryBtn.SetActive(true);
         Time.timeScale = 0f;
+    }
+
+    public void AddScore()
+    {
+        score++; //= (score += 1)
+        level = score / 5;
+        levelTxt.text = level.ToString();
+        levelFront.localScale = new Vector3((score - level * 5) / 5.0f, 1f, 1f);
     }
 }
