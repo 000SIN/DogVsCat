@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public GameObject normalCat;
+    public GameObject fatCat;
     public GameObject retryBtn;
     // Start is called before the first frame update
 
@@ -42,6 +43,26 @@ public class GameManager : MonoBehaviour
     void MakeCat()
     {
         Instantiate(normalCat);//normalCat 프리팹의 **복제본(인스턴스)를 씬에 생성.
+                               //예를 들어 p가 0, 1, 2일 때는 아무것도 생성되지 않음(30 % 확률로 고양이 안 나옴).
+                               //즉, 랜덤 값에 따라 고양이가 아예 안 나올 수도 있는 상황이 됨.
+                               //이를 방지하기 위해 무조건 한 마리는 생성되도록 코드가 추가된 것. 
+        //Iv.1 20% 확률로 고양이를 더 생성
+        if (level == 1)
+        {
+            int p = Random.Range(0, 10); // p라는 값을 0~9 사이의 숫자 중에서 랜덤으로 생성
+            if (p < 2) Instantiate(normalCat); // p의 값이 0이나 1일때 normalCat을 Instantiate(생성)출력 한다.
+        }
+        //lv 2 50% 확률로 고양이를 더 생성
+        else if (level == 2)
+        {
+            int p = Random.Range(0, 10);
+            if (p < 5) Instantiate(normalCat);
+        }
+        //lv 3 뚱뚱한 고양이를 생성해준다
+        else
+        {
+            Instantiate(fatCat);
+        }
     }
 
     public void GameOver()
